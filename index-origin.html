@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=2, user-scalable=yes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css2/reset.css">
+    <link rel="stylesheet" href="css2/normalize.css">
+
+    <!-- <script src="js/jquery-1.6.2.min.js"></script> -->
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.js"
+			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			  crossorigin="anonymous"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css2/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css2/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css2/common-min.css">
+    <link rel="stylesheet" href="css2/header.css">
+    <link rel="stylesheet" href="css2/ham.css">
+    <!-- <link rel="stylesheet" href="css2/title.css"> -->
+    <!-- <link rel="stylesheet" href="css2/index.css"> -->
+    <link rel="stylesheet" href="css2/title.min.css">
+    <link rel="stylesheet" href="css2/index.min.css">
+    <link rel="stylesheet" href="css2/footer.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <title>공통코딩5 : 윤현몰</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+         $('.tslide').slick({
+            dots: true, //도트표시
+            autoplay: true,
+            speed:2000,
+            autoplaySpeed: 2000
+         });
+    });
+    </script>
+    <script type="text/javascript" src="js/product.min.js"></script>
+    <script type="text/javascript"> 
+         // 추천상품
+        $(function(){ //$(document).ready(function () { 과 동일
+            // 0 현재번호 / 총갯수 ---------------------------------------------
+            $(".tleft").prepend("<span class='count'><strong class='current'></strong><strong class='all'></strong> </span>");
+            var sum = $(".tslide .slick-dots li").length; //length는 요소의 갯수
+            $(".tleft .all").text("0"+sum);
+            
+            var cnumber;
+            cnumber = $(".tslide .slick-dots .slick-active").index()+1; //index()는 0부터 시작됨
+            console.log(cnumber);
+            $(".tleft .current").text("0"+cnumber); //
+
+            // 현재번호 / 총갯수 --------------------------------------------- 1
+            
+            /* 슬라이드항목 설명글 이동하기 */
+            $("#title .wrap").append("<div class='wtleft'></div>");
+            $('#title .tleft').appendTo(".wtleft");
+            $(".wtleft div.tleft"+cnumber).addClass("tleftShow");;
+
+            setInterval(function(){
+                cnumber = $(".tslide .slick-dots .slick-active").index()+1;
+                $(".tleft .current").text("0"+cnumber);
+                $(".wtleft div.tleft"+cnumber).addClass("tleftShow");
+                $(".wtleft div.tleft").not(".wtleft div.tleft"+cnumber).removeClass("tleftShow");
+                $("#title .slick-initialized .slick-slide.slick-current").removeClass("tlefthide");
+                $("#title .slick-initialized .slick-slide").not(".slick-current").addClass("tlefthide");
+            },2000);
+            setInterval(function(){
+                 
+            },4000);
+
+
+            // $('.tslide .slick-dots li').click(function(){ 
+            //     var indexNum = $(this).index(); 
+            //     alert('나는'+indexNum+'번째 자식입니다'); 
+            // })
+
+           /* 추천상품 more버튼 이동하기 */
+           $(".product").before($("#recommand .more"));
+            
+        });
+    </script>
+    <!-- AOS 스크롤 이벤트 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    
+    <script type="text/javascript">
+        $(function(){
+            AOS.init();
+        });
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $('.newproduct').slick({
+                reverse:true,
+                dots: true,
+                infinite: false,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                autoplay: true,
+                speed:2000,
+                autoplaySpeed: 2000
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            // 인기제품
+           $("#bestproduct .list li:gt(2)").hide();
+            var a=0;
+            
+           $("#bestproduct .more a").click(function(){
+              $("#bestproduct .list li:gt(2)").slideToggle();
+              var more=$("#bestproduct .list li:eq(3)").offset().top;
+              $("html,body").animate({scrollTop:more},1500);
+              if(a==0){
+                $(this).text("접기");
+                a=1;
+              }else{
+                $(this).text("MORE");
+                a=0;
+              }
+              
+              return false;
+           });
+        })
+    </script>
+
+</head>
+<body>
+    <!-- 상단영역 -->
+    <header>
+        <nav class="navbar  navbar-default">
+            <div class="container headerWrap">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="">YOUNHYUN MALL</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav gnb">
+                        <li class="all"><a href="" class="ham">전체메뉴</a></li>
+                        <li><a href="">추천제품</a></li>
+                        <li><a href="">신제품</a></li>
+                        <li><a href="">이벤트</a></li>
+                        <li><a href="">PREMIUM</a></li>
+                    </ul>
+                    <button class="search navbar-right">검색</button>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">LOGIN</a></li>
+                        <li><a href="">JOIN</a></li>
+                        <li><a href="">CART</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- 타이틀영역 -->
+    <div id="title">
+        <div class="wrap container-fluid" data-aos="fade-up">
+            <ul class="tslide">
+                <li class="tslist t1">
+                    <img src="img/title-1.jpg" class="img-responsive" alt="">
+                    <div class="tleft tleft1">
+                        <h2 class="h2">MOONSTONE WHITE</h2>
+                        <p class="p">자연스러운 스톤 패턴과 견고함, 문스톤 화이트<span class="block">@inter.housing</span></p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+                <li class="tslist t2">
+                    <img src="img/title-2.jpg" class="img-responsive" alt="">
+                    <div class="tleft tleft2">
+                        <h2 class="h2">GROUND WALL<span class="block">LIGHT TIP</span></h2>
+                        <p class="p">포인트로 사용하기 좋은 입체타일, 그라운드 월 라이트 팁<span class="block">@chameleon_hyun</span></p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+                <li class="tslist t3">
+                    <img src="img/title-3.jpg" class="img-responsive" alt="">
+                    <div class="tleft tleft3">
+                        <h2 class="h2">NST IVORY</h2>
+                        <p class="p">천연석을 그대로 담은듯한 표면, 엔에스티 아이보리<span class="block">@flip_official_</span></p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+                
+                <li class="tslist t4">
+                    <img src="img/title-4.jpg" class="img-responsive" alt="">
+                    <div class="tleft tleft4">
+                        <h2 class="h2">MOONSTONE WHITE</h2>
+                        <p class="p">자연스러운 스톤 패턴과 견고함, 문스톤 화이트<span class="block">@inter.housing</span></p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+                <li class="tslist t5">
+                    <img src="img/title-5.jpg" class="img-responsive" alt="">
+                    <div class="tleft tleft5">
+                        <h2 class="h2">TUNE SNOW SOFT</h2>
+                        <p class="p">눈처럼 부드러운 색과 표면, 튠스노우 소프트<span class="block">@foundation.work</span></p>
+                        <a href="" class="more">more</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- 메인영역 -->
+    <main>
+        <!-- 추천상품 -->
+        <section id="recommand" class="padding-40">
+            <div class="wrap" >
+                <hgroup data-aos="fade-up">
+                    <h2 class="h2 text-center">RECOMMEND PRODUCTS</h2>
+                    <h3 class="h3 text-center">윤현상재가 선정한 추천제품</h3>
+                </hgroup>
+                <ul class="product">
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re1.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">PURE STONE WHITE<span class="block">퓨어 스톤 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re2.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">DUKE WHITE<span class="block">유니온스톤 듀크 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re3.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">SILKY STONE<span class="block">실키 스톤 라이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re4.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">TECNICA<span class="block">테크니카 그레이</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re5.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">GATSBY<span class="block">개츠비 화이트 틴</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re6.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">NARVIK<span class="block">나르비크 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re7.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">GROUND WALL<span class="block">그라운드 월 라이트 팁</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re8.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">LASTRA<span class="block">라스트라 디지</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                </ul>
+                <span class="more">
+                    <a href="" class="btn btn-primary" a="role">MORE</a>
+                </span>
+            </div>
+        </section>
+        <!-- 타일 샘플 -->
+        <section id="tile" class="padding-40">
+            <div class="wrap jumbotron" data-aos="fade-up">
+                <h2 class="hide">타일 샘플</h2>
+                <p class="h3">방문이 어려우신가요?<span class="block">집에서 타일샘플을 받아보세요</span></p>
+            </div>
+        </section>
+        <!-- 신상품 -->
+        <section id="newarrival" class="padding-40">
+            <div class="wrap row">
+                <hgroup class="col-md-4 col-sm-12 col-xs-12">
+                    <h2 class="h5">NEW ARRIVAL</h2>
+                    <h3 class="h3">새롭게 소개해드리는 신제품</h3>
+                </hgroup>
+                <ul class="newproduct col-md-8 col-sm-12 col-xs-12">
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new1.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">REGOLOTTO<span class="h6">레골로또</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new2.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">MYSTIC<span class="h6">미스틱 베이지</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new3.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">SILKY STONE LIGHT<span class="h6">실키 스톤 라이트</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new4.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">454COTTO<span class="h6">454 코토</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new5.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">NARVIKWHITE<span class="h6">나르비크 화이트</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new6.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">LASTRA A<span class="h6">라스트라 에이</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new7.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">SLATE WHITE<span class="h6">슬레이트 화이트</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new8.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">NST IVORY<span class="h6">엔에스티 아이보리</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                </ul>
+                <a href="" class="more">MORE</a>
+            </div>
+        </section>
+        <!-- 인기제품 -->
+        <section id="bestproduct" class="padding-40">
+            <div class="wrap"  data-aos="fade-up">
+                <hgroup>
+                    <h2 class="h2 text-center">LIVING ROOM BEST</h2>
+                    <h3 class="h3 text-center">거실에 사용된 인기 제품</h3>
+                </hgroup>
+                <ul class="list row">
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best1.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">GRECALE GHIACCIO SOFT<span class="block">그리칼레 기아초 소프트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best2.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">TECNICA GREY<span class="block">테크니카 그레이</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best3.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">EMOTION WHITE<span class="block">이모션 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best4.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">TECNICA<span class="block">테크니카 그레이</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best5.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">GATSBY<span class="block">개츠비 화이트 틴</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best6.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">NARVIK<span class="block">나르비크 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best6.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">LASTRA A<span class="h6">라스트라 에이</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best7.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">SLATE WHITE<span class="h6">슬레이트 화이트</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="" class="block">
+                            <img src="img/best8.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">NST IVORY<span class="h6">엔에스티 아이보리</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                </ul>
+                <span class="more">
+                    <a href="" class="btn btn-primary" a="role">MORE</a>
+                </span>
+            </div>
+        </section>
+        <!-- 유투브 -->
+        <section id="youtube" class="padding-40">
+            <div class="wrap">
+                <h2 class="h3">YouTube 윤현상재</h2>
+                <iframe width="779" height="438" src="https://www.youtube.com/embed/sPKZAdgxKiE?list=TLGGuL6GgmQU7-sxNTEyMjAyMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+    <!-- 하단영역 -->
+    <footer class="padding-40">
+        <div class="wrap">
+            <div class="up row">
+                <div class="left col-md-5">
+                    <h1><a href="">YOUNHYUN TRADING</a></h1>
+                    <address>
+                        <strong>(주)윤현상재 대표. 김경수</strong><br>
+                        주소. 서울특별시 강남구 학동로26길 14 윤현상재 사업자등록번호.211-86-14165<br>
+                        이메일. mall@younhyunmall.com 팩스. 02-541-7919<br>
+                        개인정보관리책임. 황민우 통신판매업자. 제 2017-서울강남-00045 호
+                    </address>
+                    <p class="p">
+                        COPYRIGHTⓒ YOUNHYUN TRANDING. ALL RIGHTS RESERVED.<br>
+                        HOSTING BY NHN COMMERCE. 
+                    </p>
+                </div>
+                <div class="center col-md-3">
+                    <h2 class="h5">고객센터</h2>
+                    <p class="h1">1855-0145</p>
+                    <p class="p">평일 오전 9시 - 오후 6시</p>
+                    <p class="p"> 토요일 및 공휴일 오전 9시 - 오후 5시</p>
+                    <p class="p">일요일 휴무</p>
+                    <span><a href="">카카오톡 문의</a><a href="">1:1문의</a></span>
+                </div>
+                <ul class="right col-md-4">
+                    <li class="col-md-12 col-lg-6">
+                        <h2 class="h5">논현동 본사 쇼룸</h2>
+                        <p class="p"><strong>평일</strong>오전 9시 - 오후 6시 </p>
+                        <p class="p"><strong>토요일 및 공휴일</strong>오전 9시 - 오후 5시</p>
+                        <p class="p"><strong>일요일</strong>휴무</p>
+                        <a href="">위치확인하기 ></a>
+                    </li>
+                    <li class="col-md-12 col-lg-6">
+                        <h2 class="h5">경기 광주 물류센터</h2>
+                        <p class="p"><strong>평일</strong>오전 9시 - 오후 6시 </p>
+                        <p class="p"><strong>토요일 및 공휴일</strong>오전 9시 - 오후 5시</p>
+                        <p class="p"><strong>일요일</strong>휴무</p>
+                        <a href="">위치확인하기 ></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="down row">
+                <span class="col-md-12"><a href="">유투브</a><a href="">유투브오피셜</a><a href="">카카오톡</a></span>
+                <p class="p col-md-4">고객님의 안전거래를 위해 현금 등으로 결제 시 토스페이먼츠 구매안전 서비스를 이용하실 수 있습니다.</p>
+                <ul class="fnb col-md-6">
+                    <li class="col-md-2"><a href="">윤현상재 소개</a></li>
+                    <li class="col-md-2"><a href="">이용약관</a></li>
+                    <li class="col-md-2"><a href="">개인정보처리방침</a></li>
+                    <li class="col-md-2"><a href="">이용안내</a></li>
+                    <li class="col-md-2"><a href="">사업자정보확인</a></li>        
+                </ul>
+                <select name="" id="" class="col-md-2">
+                    <option value="">윤현상재</option>
+                    <option value="">space B-E</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* 상단영역 */
+@media (min-width: 768px){
+  header .navbar-default {
+    background-image:none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  header  .navbar-header {
+    float: none;
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 750px;
+  }
+  header .container {
+  position: relative;
+  padding-top: 30px;
+  }
+  header .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  margin-top: auto;
+  margin-bottom: auto;
+  }
+  .navbar-default .navbar-brand a{
+    
+  font-size: 30px;
+  font-weight: bold;
+  }
+  header  .navbar-nav > li > button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border:none;
+  background-color:transparent;  
+  }
+}
+@media (min-width: 992px){
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px){
+  
+  header .navbar-header{
+    position: absolute;
+  }
+ #title .container {
+   padding-top: 30px;
+   position: relative;
+  }
+   .container {
+    width: 1200px;
+  }
+  
+}
+

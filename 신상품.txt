@@ -1,0 +1,76 @@
+<!-- 신상품 -->
+        <section id="newarrival" class="padding-40">
+            <div class="wrap row">
+                <hgroup class="col-md-4 col-sm-12 col-xs-12">
+                    <h2 class="h5">NEW ARRIVAL</h2>
+                    <h3 class="h3">새롭게 소개해드리는 신제품</h3>
+                </hgroup>
+                <ul class="newproduct col-md-8 col-sm-12 col-xs-12">
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new1.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">REGOLOTTO<span class="h6">레골로또</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new2.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">MYSTIC<span class="h6">미스틱 베이지</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new3.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">SILKY STONE LIGHT<span class="h6">실키 스톤 라이트</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new4.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">454COTTO<span class="h6">454 코토</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new5.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">NARVIKWHITE<span class="h6">나르비크 화이트</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new6.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">LASTRA A<span class="h6">라스트라 에이</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new7.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">SLATE WHITE<span class="h6">슬레이트 화이트</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/new8.jpg" alt="" class="img-responsive">
+                            <h4 class="h5">NST IVORY<span class="h6">엔에스티 아이보리</span></h4>
+                            <p class="p"><span>box</span>100,000원</p>
+                            <p class="p"><span>1m</span>82000월</p>
+                        </a>
+                    </li>
+                </ul>
+                <a href="" class="more">MORE</a>
+            </div>
+        </section>

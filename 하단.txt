@@ -1,0 +1,59 @@
+<!-- 하단영역 -->
+    <footer class="padding-40">
+        <div class="wrap">
+            <div class="up row">
+                <div class="left col-md-5">
+                    <h1><a href="">YOUNHYUN TRADING</a></h1>
+                    <address>
+                        <strong>(주)윤현상재 대표. 김경수</strong><br>
+                        주소. 서울특별시 강남구 학동로26길 14 윤현상재 사업자등록번호.211-86-14165<br>
+                        이메일. mall@younhyunmall.com 팩스. 02-541-7919<br>
+                        개인정보관리책임. 황민우 통신판매업자. 제 2017-서울강남-00045 호
+                    </address>
+                    <p class="p">
+                        COPYRIGHTⓒ YOUNHYUN TRANDING. ALL RIGHTS RESERVED.<br>
+                        HOSTING BY NHN COMMERCE. 
+                    </p>
+                </div>
+                <div class="center col-md-3">
+                    <h2 class="h5">고객센터</h2>
+                    <p class="h1">1855-0145</p>
+                    <p class="p">평일 오전 9시 - 오후 6시</p>
+                    <p class="p"> 토요일 및 공휴일 오전 9시 - 오후 5시</p>
+                    <p class="p">일요일 휴무</p>
+                    <span><a href="">카카오톡 문의</a><a href="">1:1문의</a></span>
+                </div>
+                <ul class="right col-md-4">
+                    <li class="col-md-12 col-lg-6">
+                        <h2 class="h5">논현동 본사 쇼룸</h2>
+                        <p class="p"><strong>평일</strong>오전 9시 - 오후 6시 </p>
+                        <p class="p"><strong>토요일 및 공휴일</strong>오전 9시 - 오후 5시</p>
+                        <p class="p"><strong>일요일</strong>휴무</p>
+                        <a href="">위치확인하기 ></a>
+                    </li>
+                    <li class="col-md-12 col-lg-6">
+                        <h2 class="h5">경기 광주 물류센터</h2>
+                        <p class="p"><strong>평일</strong>오전 9시 - 오후 6시 </p>
+                        <p class="p"><strong>토요일 및 공휴일</strong>오전 9시 - 오후 5시</p>
+                        <p class="p"><strong>일요일</strong>휴무</p>
+                        <a href="">위치확인하기 ></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="down row">
+                <span class="col-md-12"><a href="">유투브</a><a href="">유투브오피셜</a><a href="">카카오톡</a></span>
+                <p class="p col-md-4">고객님의 안전거래를 위해 현금 등으로 결제 시 토스페이먼츠 구매안전 서비스를 이용하실 수 있습니다.</p>
+                <ul class="fnb col-md-6">
+                    <li class="col-md-2"><a href="">윤현상재 소개</a></li>
+                    <li class="col-md-2"><a href="">이용약관</a></li>
+                    <li class="col-md-2"><a href="">개인정보처리방침</a></li>
+                    <li class="col-md-2"><a href="">이용안내</a></li>
+                    <li class="col-md-2"><a href="">사업자정보확인</a></li>        
+                </ul>
+                <select name="" id="" class="col-md-2">
+                    <option value="">윤현상재</option>
+                    <option value="">space B-E</option>
+                </select>
+            </div>
+        </div>
+    </footer>

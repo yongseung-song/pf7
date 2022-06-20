@@ -1,0 +1,77 @@
+#title .container{
+  padding: 0 40px;
+  padding-left: 23%;
+}
+#title .tslide{
+  width: 97%;
+  margin: 0 auto;
+}
+#title .tslist{
+  position: relative;
+  padding-left: 300px;
+  padding-left: 80px;
+  padding-right: 0;
+}
+#title .tslist .tleft{
+/*   position: fixed;
+  left: 25px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #000; */
+}
+#title .wtleft{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+#title .wtleft .tleft{
+  position: absolute;
+  left: 0px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  opacity: 0;
+}
+.tleftShow{
+  opacity: 1 !important;
+  left: 60px !important;
+  z-index: 1;
+/*   animation-name: tleftShow;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; */
+}
+/* @keyframes tleftShow{
+  0%{
+    opacity: 0;
+    left: 0;
+    display: flex;
+  }
+  100%{
+    opacity: 1;
+    left: 60px;
+     display: flex;
+  }
+} */
+#title .slick-dots{
+  display: none !important;
+}
+#title .wtleft .count{
+  transform: translateX(70px) translateY(0px) scale(1.5);
+}
+#title .wtleft .count .ccount{
+  font-size: 20px;
+}
+/* .slick-dots{
+  display: none !important;
+} */
+
+#title .more{
+  width: 120px;
+}

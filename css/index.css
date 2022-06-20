@@ -1,0 +1,164 @@
+/* 추천상품 */
+#recommand,#bestproduct {
+  height: 100%;
+}
+#recommand .wrap {
+  
+}
+#recommand hgroup {
+  
+}
+#recommand hgroup[data-aos],#bestproduct  hgroup[data-aos]{
+  transition-duration: 1.4s;
+}
+#recommand hgroup h2,#bestproduct hgroup h2{
+  
+  font-size: 17px;
+  color: #999;
+}
+#recommand hgroup h3 {
+  
+}
+#recommand ul {
+  
+}
+#recommand ul li {
+  
+}
+#recommand ul li a ,#bestproduct ul li a {
+  padding: 10px;
+  box-sizing: border-box;
+}
+#recommand ul li a img {
+
+}
+#recommand ul li a h4,#bestproduct ul li a h4 {
+  font-size: 17px;
+}
+#recommand ul li a h4 span {
+  
+}
+#recommand ul li a p {
+  
+}
+#recommand ul li a p span {
+  
+}
+#recommand .wrap > a {
+  
+}
+
+#recommand .slick-dots{
+  /*! border-top:2px solid #f4b7b7; */ 
+  /*! width: 50%; */
+  transition: all 1s;
+  /*! opacity: 0; */
+}
+#recommand .slick-dots li{
+  /*! opacity: 0; */
+}
+.re100{
+  width: 100% !important;
+}
+#recommand .more,#bestproduct .more{
+  display: block;
+  text-align: center;
+  margin: 30px;
+}
+
+.progressbar{
+  display: block;
+  width: 50%;
+  border-top:3px solid;
+  transition: all 0.5s;
+}
+.full{
+  width: 100%;
+}
+
+/* 타일 */
+#sample .container{
+  background-image: url(../img/tile.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  height: 201px;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+
+/* 신상품 */
+#newarrival {
+  
+}
+#newarrival .wrap {
+  
+}
+#newarrival hgroup {
+  
+}
+#newarrival hgroup h2 {
+  
+}
+#newarrival hgroup h3 {
+  
+}
+#newarrival ul {
+  
+}
+#newarrival ul li {
+  padding: 0 10px;
+}
+#newarrival ul li a {
+  
+  box-shadow: 0 2px 3px #d0c5c5;
+  padding-bottom: 20px;
+}
+#newarrival ul li a img {
+  
+  /*! margin: 0 -20px 0 -20px; */
+}
+#newarrival ul li a h4 {
+  
+  margin-left: 20px;
+}
+#newarrival ul li a h4 span {
+  
+}
+#newarrival ul li a p {
+  
+  margin-left: 20px;
+}
+#newarrival ul li a p span {
+  
+}
+#newarrival a.more {
+  
+}
+/* 유투브 */
+#youtube{
+
+}
+#youtube .wrap{
+  
+}
+#youtube h2{
+  
+}
+#youtube iframe{
+  width: 100%;
+  height: 658px;
+}
+/* 신제품 */
+@media screen and (min-width:992px){
+  #newarrival .wrap{
+    width: 92%;
+  }
+
+}
+@media screen and (max-width:768px){
+  #recommand ul li a img {
+    margin: 0 auto;
+    width: 85%;
+  }
+}

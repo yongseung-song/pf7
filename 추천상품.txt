@@ -1,0 +1,78 @@
+<!-- 추천상품 -->
+        <section id="recommand" class="padding-40">
+            <div class="wrap" >
+                <hgroup data-aos="fade-up">
+                    <h2 class="h2 text-center">RECOMMEND PRODUCTS</h2>
+                    <h3 class="h3 text-center">윤현상재가 선정한 추천제품</h3>
+                </hgroup>
+                <ul class="product">
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re1.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">PURE STONE WHITE<span class="block">퓨어 스톤 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re2.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">DUKE WHITE<span class="block">유니온스톤 듀크 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re3.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">SILKY STONE<span class="block">실키 스톤 라이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re4.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">TECNICA<span class="block">테크니카 그레이</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re5.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">GATSBY<span class="block">개츠비 화이트 틴</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re6.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">NARVIK<span class="block">나르비크 화이트</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re7.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">GROUND WALL<span class="block">그라운드 월 라이트 팁</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <img src="img/re8.jpg" class="img-responsive" alt="퓨어 스톤 화이트">
+                            <h4 class="h4">LASTRA<span class="block">라스트라 디지</span></h4>
+                            <p class="p"><span>BOX</span>50,000원</p>
+                            <p class="p"><span>1m</span>40,000원</p>
+                        </a>
+                    </li>
+                </ul>
+                <span class="more">
+                    <a href="" class="btn btn-primary" a="role">MORE</a>
+                </span>
+            </div>
+        </section>
